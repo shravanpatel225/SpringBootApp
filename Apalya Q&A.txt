@@ -1,0 +1,75 @@
+Collection is a  interface of the Java Collection Framework. 
+Most of the classes in Java Collection Framework inherit from this interface.
+ List, Set and Queue are main sub interfaces of this interface.
+ JDK doesn’t provide any direct implementations of this interface.
+ But, JDK provides direct implementations of it’s sub interfaces.
+ ArrayList, Vector, HashSet, LinkedHashSet, PriorityQueue are some indirect implementations of Collection interface.
+
+Collections is an utility class in java.util package.
+ It consists of only static methods which are used to operate on objects of type Collection.
+Collections.max()
+Collections.min()
+Collections.sort()
+----------------------------------------------------------------------------------------------------------------
+				HASHMAP VS HASHTABLE
+
+1) HashMap is non synchronized. 						1)Hashtable is synchronized. It is thread-safe and can be shared with many threads.
+It is not-thread safe and can't be shared between many threads without proper synchronization code.	
+2) HashMap allows one null key and multiple null values.				2)Hashtable doesn't allow any null key or value.
+3) HashMap is a new class introduced in JDK 1.2.					3)Hashtable is a legacy class.
+4) HashMap is fast.								4)Hashtable is slow.
+5) We can make the HashMap as synchronized by calling this code			5)Hashtable is internally synchronized and can't be unsynchronized.
+Map m = Collections.synchronizedMap(hashMap);	
+6) HashMap is traversed by Iterator.						6)Hashtable is traversed by Enumerator and Iterator.
+7) Iterator in HashMap is fail-fast.						7)Enumerator in Hashtable is not fail-fast.
+8) HashMap inherits AbstractMap class.						8)Hashtable inherits Dictionary class.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+				COMPAREBLE VS COMPARATOR
+
+1) Comparable provides a single sorting sequence.			1)The Comparator provides multiple sorting sequences. 
+
+2) Comparable affects the original class,				2)Comparator doesn't affect the original class, i.e., the actual class is not modified.
+ i.e., the actual class is modified.	
+3) Comparable provides compareTo() method to sort elements.	3)Comparator provides compare() method to sort elements.
+4) Comparable is present in java.lang package.			4)A Comparator is present in the java.util package.
+5) We can sort the list elements of Comparable 			5)We can sort the list elements of Comparator type by Collections.sort(List, Comparator) method.
+type by Collections.sort(List) method.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+An exception is first thrown from the top of the stack and if it is not caught, 
+it drops down the call stack to the previous method,
+If not caught there, the exception again drops down to the previous method,
+ and so on until they are caught or until they reach the very bottom of the call stack.
+This is called exception propagation.
+
+Only unchecked exception can be propagated
+
+Checked exception can not be propagated....
+
+
+----------------------------------------------------------------------------------------------------------
+System.out.println(Integer.toBinaryString(10));  {DECIMAL TO BINARY}
+-------------------------------
+public class StringFormatter {  
+public static String reverseWord(String str){  
+    String words[]=str.split("\\s");  
+    String reverseWord="";  
+    for(String w:words){  
+        StringBuilder sb=new StringBuilder(w);  
+        sb.reverse();  
+        reverseWord+=sb.toString()+" ";  
+    }  
+    return reverseWord.trim();  
+}  
+}  
+File: TestStringFormatter.java
+
+public class TestStringFormatter {  
+public static void main(String[] args) {  
+    System.out.println(StringFormatter.reverseWord("my name is khan"));  
+    System.out.println(StringFormatter.reverseWord("I am sonoo jaiswal"));    
+    }  
+}  ---------------------------------------------------------------------------
+
+
